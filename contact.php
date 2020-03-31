@@ -10,6 +10,9 @@ $token = $_SESSION['token'];
 $db = DB::getInstance();
 $pdo = $db->getConnection();
 
+/*
+ * Fallback if user disables Javascript
+ */
 $submit = filter_input(INPUT_POST, 'submit', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 if (isset($submit) && $submit === 'submit') {
     $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -139,6 +142,7 @@ $server_name = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
                             <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcR8OQUAAAAAG1qLKJal22tLlpW4loJ7CIcfrlX" data-callback="correctCaptcha"></div>
 
                         <?php } else { ?>
+                            <!-- Use a data callback function that Google provides -->
                             <div id="recaptcha" class="g-recaptcha" data-sitekey="6LdXNpAUAAAAAMwtslAEqbi9CU3sviuv2imYbQfe" data-callback="correctCaptcha"></div>
                         <?php } ?>
                         <input id="submitForm" type="submit" name="submit" value="submit" tabindex="7" data-response="">
@@ -207,6 +211,7 @@ $server_name = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
         </div>
 
         <script src="assets/js/contact.js"></script>
+        <!-- Fetch the g-response using a callback function -->
         <script>
             var correctCaptcha = function (response) {
                 document.querySelector('#submitForm').setAttribute('data-response', response);
