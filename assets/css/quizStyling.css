@@ -1,0 +1,1409 @@
+/* CSS Document for Screen */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,700,700i&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, textarea, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* { box-sizing: border-box; }
+
+body {font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 300; color: #555;     background: url(../images/img-naturalwhite-01.png) repeat;  padding: 0; margin: 0;}
+
+.blogTitle { font-size: 1.8em; font-style: italic; font-weight: 300; padding-left: 20px; }
+
+a.social { text-decoration: none; color: #4C8FEC; font-size: 1.4em; }
+a.social:hover { color: green; }
+a.social:visited { color: lightcoral; }
+
+/* Fake Popup */
+#exifData { display: none; }
+
+.shade { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 20000; background-color: rgba(0,0,0,0.65); }
+
+.play { display: none; }
+
+#picture { position: relative; display: block; width: 70%; height: 70%; margin: 18.750em auto; }
+#picture::after { content: ''; display: block; clear: both; }
+
+
+/* Temp Disable Prev & Next Buttons */
+.prevSlide { display: block; position: absolute; top: 30%; left: 3.125em; z-index: 20001; }
+.prevSlide a { color: #fff; border: 1px solid #fff; padding: 4px 15px; transition: background-color .5s; text-decoration: none; font-size: 1.4em; }
+.prevSlide a:hover { background-color: rgba(0, 0, 0, 0.3); }
+.nextSlide { display: block; position: absolute; top: 30%; right: 3.125em; z-index: 20001; }
+.nextSlide a { color: #fff; border: 1px solid #fff; padding: 4px 15px; transition: background-color .5s; text-decoration: none; font-size: 1.4em; }
+.nextSlide a:hover { background-color: rgba(0, 0, 0, 0.3); }
+.prevSlide a:visited, .nextSlide a:visited { color: #fff; }
+
+#pictureELE { position: absolute; bottom: 0; left: 0; width: 100%; max-width: 128em; cursor: pointer; }
+
+
+.exifInfo { display: none; position: absolute; bottom: 0em; left: 0; z-index: 20001; display: block; width: 100%; height: 3.125em; line-height: 3.125em; background-color: rgba(255,255,255, 0.65); }
+.exifInfo p { color: #000; padding-left: 30px; font-size: 1.4em; text-align: center; }
+/*.exitBtn { display: none; position: absolute; bottom: 0; left: 0; z-index: 2001; display: block; width: 100%; height: 50px; line-height: 50px; background-color: rgba(125,125,125, 0.65); padding-left: 30px; } */
+.newSlide {
+
+    opacity: 0;
+
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 20001;
+}
+
+.oldSlide {
+
+    opacity: 1;
+
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.hiding {
+    opacity: 0;
+    z-index: 20001;
+}
+
+.blogBox { width: 98%; }
+
+#page { display: block; max-width: 75em; margin: 0 auto; position: relative; }
+
+/* Text */
+h1 { margin: 0 0 1em 0; font-size: 2.0em; font-weight: 700; }
+h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; }
+h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; }
+h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; }
+
+p { margin: 0 0 1em 0 }
+
+a { color: #007eff; }
+a:visited { color: #65b1ff; }
+
+a.btn { cursor: pointer; font-size: 1.2em; text-decoration: none; color: #fff; border: 1px solid #fff; padding: 4px 15px; transition: background-color .5s; }
+a.btn:hover { background-color: rgba(0, 0, 0, 0.3); }
+
+a.btn3 { clear: both; font-size: 1.2em; text-decoration: none; color: #555; border: 1px solid #555; padding: 4px 15px; transition: background-color .5s; }
+a.btn3:hover { background-color: rgba(0, 0, 0, 0.3); }
+
+/* Astronomy Picture of the Day Styling */
+
+#nasa {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    margin: 20px auto;
+}
+#nasa h2 { color: #fff; text-align: center; }
+#nasa #apod {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+}
+
+#nasa #video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+}
+
+#nasa #nasaInfo { font-size: 1.2em; line-height: 1.5; color: #fff; }
+
+
+
+/* Header */
+
+header {height: 430px; background: #cf0004 url(../images/banner_1200_2.jpg) no-repeat center bottom; position: relative; }
+
+header a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block; width: 160px; height: 160px;
+    background: url(../images/logo.svg) no-repeat 0 0; background-size: contain;
+    top: 15px; left: 20px;
+}
+
+header a.logo span { display: none }
+
+header div.intro { position: absolute; width: 42%; bottom: 50px; left: 5%; z-index: 1; }
+header div.intro h1 { line-height: 1em; margin: 0 0 20px 0; color: #fff;  }
+
+/* Section - All */
+
+section { padding: 0 30px; }
+section::after { content: ' '; display: block; clear: both; }
+/* Section - Main */
+
+section.main { background-color: #fff; margin-top: 20px; margin-bottom: 30px; padding: 20px 0; }
+#gameTitle {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0px auto;
+}
+
+#gameTitle::after { content: ''; display: block; clear: both; }
+
+h2.gameTitle {
+    font-size: 1.8em;
+    line-height: 1.5;
+}
+section.main aside { width: 50%; float: left; }
+
+section.main aside .charity {
+    display: block;
+    width: 100%;
+    max-width: 60%;
+    height: auto;
+    background-color: #F2F2F2;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Charity CSS Section - Right Side of Page */
+section.main aside .charity::after { content: ''; display: block; clear: both;}
+
+section.main aside .charity h2 { font-size: 1.4em; }
+
+section.main aside .charity p {
+    font-size: 1.0em;
+    line-height: 1.2;
+}
+
+section.main aside .charity a.btn2 { 
+    float: right;
+    font-size: 1.2em; 
+    text-decoration: none; 
+    color: #555; 
+    border: 1px solid #555; 
+    padding: 4px 15px;
+    transition: background-color .5s; 
+}
+section.main aside .charity a.btn2:hover { background-color: rgba(0, 0, 0, 0.3); }
+
+
+
+/* Social Media Icons */
+.socialMediaStyle {
+    clear: both;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    background-color: rgba(85,85,85,0.15);
+    padding: 15px 5px 15px 55px;
+    margin: 10px auto;
+}
+
+.socialMediaStyle::after { content: ''; display: block; clear: both; }
+
+.socialMediaStyle ol, ul {
+    list-style: none;
+}
+
+.socialMediaStyle ul li a {
+    float: left;
+    padding-left: 5px;
+}
+
+/* Login Page CSS */
+
+.login { 
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-color: rgba(0,0,0,0.65);
+    padding: 30px;
+    margin: 15px auto;;
+}
+
+.login fieldset {
+    padding: 10px;
+}
+
+.login legend {
+    color: #F2F2F2;
+}
+
+.login label {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 140px;
+    height: 30px;
+    color: #F2F2F2;
+}
+
+.login input { 
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    color: #2e2e2e;
+    padding: 0 0.313em;
+    margin-bottom: 0.625em;
+}
+
+.login input[type=submit] {
+    outline: none;
+    border: none;
+    float: right;
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #E6E6FA;
+    font-size: 1.0em;
+    color: #2e2e2e;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+
+div#remote {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
+    background-color: rgba(85,85,85,0.5);
+    padding: 10px;
+    margin: 0 auto;
+}
+
+div#remote::after { content: ''; display: block; clear: both;}
+
+div#remote #ePrev {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+div#remote #status {
+    color: #fff;
+    text-align: center;
+}
+
+div#remote #eNext {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Add and Edit Form Styling */
+form#addTriviaQA, form#editTrivia {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+form#addTriviaQA fieldset, form#editTrivia fieldset {
+    border: 0.125em solid #4C8FEC;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 0.938em;
+    margin-bottom: 0.625em;
+}
+
+form#addTriviaQA legend, form#editTrivia legend {
+    font-size: 1.2em;
+    color: #4C8FEC;
+    padding: 0 0.313em;
+}
+
+form#addTriviaQA .select-css, form#editTrivia .select-css  {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #4C8FEC;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0.625em 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+}
+
+form#addTriviaQA .select-css .select-css::-ms-expand, form#editTrivia .select-css .select-css::-ms-expand { display: none; }
+
+form#addTriviaQA .select-css .select-css:hover, form#editTrivia .select-css .select-css:hover { border-color: #888; }
+
+form#addTriviaQA .select-css .select-css:focus, form#editTrivia .select-css .select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none; 
+}
+
+form#addTriviaQA .select-css .select-css option, form#editTrivia .select-css .select-css option { font-weight: normal; }
+
+form#addTriviaQA textarea, form#editTrivia textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    max-width: 100%;
+    height: 25.000em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4C8FEC;
+    font-size: 1.2em;
+    line-height: 1.5;
+    padding: 10px;
+    margin-top: 0.125em;
+}
+
+form#addTriviaQA label, form#editTrivia label  {
+    clear: left;
+    float: left;
+    display: block;
+    width: 6.250em;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #4C8FEC;
+    text-transform: capitalize;
+    padding: 0.125em 0em;
+    margin: 10px 0;
+}
+form#addTriviaQA input, form#editTrivia input {
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 80%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    color: #4C8FEC;
+    padding: 0.125em 7px;
+    margin: 10px 0;
+}
+
+form#addTriviaQA #submitBtn, form#editTrivia #submitBtn {
+    cursor: pointer;
+    clear: both;
+    border: none;
+    outline: none;
+    float: right;
+    display: block;
+    width: 6.500em;
+    height: 2.500em;
+    background-color: #4C8FEC;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-top: 0.625em;
+    margin-right: 0em;
+}
+
+
+/* Add CMS Entry */
+
+form#dataEntry { display: block; width: 100%; max-width: 800px; height: auto; background-color: #f2f2f2; padding: 0.938em 1.250em; margin: 0 auto; }
+
+form#dataEntry fieldset { border: 0.125em solid #4C9CF1; padding: 0.938em; margin-bottom: 0.625em; }
+
+form#dataEntry legend { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 1.2em; color: #4C9CF1; padding: 0 0.313em; }
+
+.radio-toolbar {
+    margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 1em;
+    color: #4C9CF1;
+    border: 2px solid #4C9CF1;
+    border-radius: 4px;
+}
+
+.radio-toolbar label:hover {
+    background-color: #dfd;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #ccc;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #ccc;
+    border-color: #555;
+    color: #555;
+}
+
+form#dataEntry #imgBtn {
+    outline: none;
+    border: none;
+    clear: both;
+    display: block;
+    width: 26.375em;
+    background-color: #193a60;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    color: #fff;
+    padding: 0; 
+}
+
+form#dataEntry #imgBtn::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    color: white;
+    border: none;
+    background-color: red;
+    width: 7.500em;
+    height: 1.875em; 
+}
+
+form#dataEntry .select-css {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0.625em 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+}
+
+form#dataEntry .select-css .select-css::-ms-expand { display: none; }
+
+form#dataEntry .select-css .select-css:hover { border-color: #888; }
+
+form#dataEntry .select-css .select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none; 
+}
+
+form#dataEntry .select-css .select-css option { font-weight: normal; }
+
+form#dataEntry label.inputLabel {
+    clear: left;
+    float: left;
+    display: block;
+    width: 6.250em;
+    height: 2.500em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.250em;
+    color: #4C8FEC;
+    text-transform: capitalize;
+    padding: 0.125em 0em; 
+}
+
+form#dataEntry input {
+    clear: right;
+    display: block;
+    width: 19.688em;
+    height: 1.875em;
+    border: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    color: #2e2e2e;
+    padding-left: 0.313em;
+    margin-bottom: 0.625em; 
+}
+
+form#dataEntry label.textareaLabel {
+    clear: both;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #4C8FEC; 
+}
+
+form#dataEntry textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    max-width: 100%;
+    height: 25.000em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    line-height: 1.5;
+    padding: 0.625em 0.313em;
+    margin-top: 0.125em; 
+}
+
+form#dataEntry input[type=submit] {
+    cursor: pointer;
+    clear: both;
+    border: none;
+    outline: none;
+    float: right;
+    display: block;
+    width: 6.500em;
+    height: 2.500em;
+    background-color: #4C8FEC;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-top: 0.625em;
+    margin-right: 0em; 
+}
+
+form#dataEntry input[type=submit]:hover, .contact-style form#dataEntry input[type=submit]:hover { background-color: #2e6bb1; }
+
+/* Members Page */
+section.main .picture-box { display: block; width: 100%; max-width: 800px; height: auto; padding: 10px 20px 5px 20px; margin: 0 auto; }
+
+section.main .picture-box div.article { padding: 10px 20px; }
+
+section.main .picture-box div.article h2 { font-size: 1.6em;  }
+
+section.main .picture-box div.article h2 span {display: block; font-size: 0.6em; font-weight: 300; }
+
+section.main .picture-box div.article a { }
+
+section.main .picture-box div.article hr { margin: 15px 0; }
+
+section.main .picture-box div.article p { font-size: 1.2em; line-height: 1.5; }
+
+
+
+
+/* Contact Form CSS */
+div#message { position: relative; height: 50px; padding: 10px ; margin: 10px auto; }
+
+div#message::after { content: ''; display: block; clear: both; }
+
+div#message h2#notice { display: none; position: absolute; top: 0; left: 10px; font-size: 1.4em; line-height: 50px; }
+
+div#message a#messageSuccess { 
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em; 
+    text-decoration: none; 
+    color: #555; 
+    border: 1px solid #555; 
+    padding: 4px 15px; 
+    transition: background-color .5s;
+}
+
+div#message a#messageSuccess:hover { background-color: rgba(0, 0, 0, 0.3); }
+
+
+form#contact {  display: block; width: 100%; max-width: 800px; height: auto; background-color: #f2f2f2; padding: 0.938em 1.250em; margin: 0 auto;}
+
+form#contact fieldset { border: 0.125em solid #555; padding: 0.938em; margin-bottom: 0.625em; }
+
+form#contact legend { font-size: 1.2em; color: #555; padding: 0 0.313em; }
+
+form#contact label.labelstyle {
+    clear: left;
+    float: left;
+    display: block;
+    width: 250px;
+    height: 2.500em;
+    font-size: 1.2em;
+    line-height: 1.250em;
+    color: #555;
+    text-transform: capitalize;
+    padding: 0.125em 0em;
+}
+
+form#contact input {
+    clear: right;
+    width: 19.688em;
+    height: 40px;
+    border: 2px solid #555;
+    outline: none;
+    font-size: 1.0em;
+    color: #555;
+    padding-left: 0.313em;
+    margin-bottom: 0.625em; 
+}
+
+
+#radio-toolbar {
+    margin: 30px 10px 0px 10px; 
+}
+
+#radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+#radio-toolbar label {
+    display: inline-block;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 1em;
+    color: #4C9CF1;
+    border: 2px solid #555;
+    border-radius: 4px;
+}
+
+#radio-toolbar label:hover {
+    background-color: #dfd;
+}
+
+#radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #ccc;
+}
+
+#radio-toolbar input[type="radio"]:checked + label {
+    background-color: #fff;
+    border-color: #fff;
+    color: #555;
+}
+
+form#contact label.textareaLabel {
+    clear: both;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555; 
+    margin-top: 10px;
+}
+
+form#contact textarea {
+    border: 2px solid #555;
+    outline: none;
+    resize: none;
+    width: 100%;
+    max-width: 100%;
+    height: 25.000em;
+    color: #555;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    line-height: 1.5;
+    padding: 0.625em 0.313em;
+    margin-top: 0.125em; 
+}
+
+form#contact input[type=submit] {
+    cursor: pointer;
+    clear: both;
+    border: none;
+    outline: none;
+    float: right;
+    display: block;
+    width: 6.500em;
+    height: 2.500em;
+    background-color: #fff;
+    font-size: 1.2em; 
+    text-transform: capitalize;
+    text-decoration: none; 
+    color: #555; 
+    border: 1px solid #555; 
+    padding: 4px 15px;
+    transition: background-color .5s; 
+}
+
+form#contact input[type=submit]:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Pagination */
+section.main aside #p-controls {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-top: 0;
+    margin-left: 20px;
+}
+section.main aside #p-controls #prePage {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    z-index: 1000;
+    font-size: 0.8em; 
+    text-decoration: none; 
+    color: #555; 
+    border: 1px solid #555; 
+    padding: 4px 15px; 
+    transition: background-color .5s;
+}
+
+section.main aside #p-controls #nextPage {
+    position: absolute;
+    top: 5px;
+    right: 60px;
+    z-index: 1000;
+    font-size: 0.8em; 
+    text-decoration: none; 
+    color: #555; 
+    border: 1px solid #555; 
+    padding: 4px 15px; 
+    transition: background-color .5s;
+} 
+section.main aside #p-controls #prePage:hover, section.main aside #p-controls #nextPage:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+section.main aside .cms { padding: 20px; }
+
+section.main aside .cms h2 { font-size: 1.6em; }
+section.main aside .cms h2 span { display: block; font-size: 0.6em; font-weight: 300;}
+section.main aside .cms p { font-size: 1.2em; line-height: 1.5; }
+
+
+
+section.main aside .picture-box [id^="page"] {
+    display: none;
+}
+section.main aside .picture-box #page1 {
+    display: block;
+}
+
+/* Game CSS */
+#movie, #space { display: none; }
+
+form#gameCat {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    padding: 20px 0px;
+    margin: 5px auto;
+}
+
+form#gameCat .select-css  {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #4C8FEC;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0.625em 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+}
+
+form#gameCat .select-css .select-css::-ms-expand { display: none; }
+
+form#gameCat .select-css .select-css:hover { border-color: #888; }
+
+form#gameCat .select-css .select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none; 
+}
+
+form#gameCat .select-css .select-css option { font-weight: normal; }
+
+
+
+
+.triviaContainer {
+    display: block;
+    background-color: rgba(0,0,0, 0.5);
+    width: 100%;
+    max-width: 800px;
+    height: 725px;
+    min-height: 800px;
+    padding: 20px;
+    margin: 5px auto;
+}
+
+.triviaContainer #categories-form {
+    background-color: #f5f2d0;
+    padding: 20px;
+}
+
+.triviaContainer #categories-form label {
+
+
+    height: 20px;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.8em;
+    color: rgba(85,85,85,0.6);
+
+}
+
+.triviaContainer #categories-form select {
+    clear: both;
+    display: block;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: #4484CE;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.0em;
+    color: #f5f2d0;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+#mainGame {
+
+}
+
+#mainGame::after { content: ' '; display: block; clear: both; }
+
+#mainGame #headerStyle {   
+    padding: 10px 20px;
+    margin: 0px;
+}
+
+#mainGame #headerStyle h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #f5f2d0;
+}
+
+#mainGame #triviaSection {
+    margin: 0px;
+}
+
+
+#mainGame #triviaSection #questionBox {
+    display: block;
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+
+    background-color: #f5f2d0;
+
+}
+
+#mainGame #triviaSection #questionBox h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.6em;
+    line-height: 1.5;
+    color: rgba(85,85,85,0.8);
+    vertical-align: middle;
+}
+
+#mainGame #triviaSection #buttonContainer .answerButton {
+    display: block;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-top: 2px solid #7f7f7f;
+    background-color: rgba(85,85,85, 0.9);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4em;
+    color: #f5f2d0;;
+    text-align: left;
+    padding-left: 10px;
+    margin: 0;
+}
+
+#mainGame #playerStats {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-top: 2px solid #7f7f7f;
+}
+
+#mainGame #playerStats #score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2em;
+    color: #f5f2d0;
+    line-height: 15px;
+}
+
+#mainGame #playerStats #percent {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2em;
+    color: #f5f2d0;
+    line-height: 15px;
+}
+
+#mainGame #nextStyle {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+#mainGame #nextStyle #next {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #555;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4em;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+#mainGame #nextStyle #next:hover {
+    background-color: rgba(85,85,85, 0.7);
+    color: #fff;
+}
+
+/* Picture Gallery CSS */
+.frame {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    padding: 5px 20px;
+}
+
+
+.box {
+    float: left;
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    border: 2px solid #555;
+    padding: 5px;
+    transition: background-color .5s;
+}
+
+.box:hover {
+    background-color: rgba(85, 85, 85, 0.6);
+}
+
+/* Navigation */
+
+nav {
+    background-color: rgba(0,0,0,0.65);
+    position: absolute;
+    top: 0px; left: 0px;
+    padding: 15px 0 0 0; 
+    width: 100%;
+}
+
+nav::after { content: ''; display: block; clear: both; }
+
+nav ul { list-style: none; margin: 0; padding: 0px; }
+
+
+nav ul li:hover { background-color: #2b0306; }
+nav ul li:hover > ul { display: block; }
+
+nav ul li a { 
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+
+nav ul li a:visited { color: #fff; }
+
+nav ul li a:hover { background-color: #6d0911; }
+
+nav ul ul { position: absolute; top: 100%; background-color: #2b0306; display: none; }
+
+nav ul ul li { position: relative; }
+
+nav ul ul ul { left: 100%; top: 0px; }
+
+
+
+
+/* Top Level */
+nav > ul { padding-left: 200px; }
+nav > ul > li { float: left; }
+nav > ul > li > a { width: auto; padding: 10px 20px 15px 20px;  }
+
+
+nav a[aria-haspopup='true']::after {
+    content: '';
+    display: block; width: 0px; height: 0px;
+    position: absolute;
+    top: 10px; right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff;
+}
+
+nav > ul > li > a[aria-haspopup='true']::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    left: 20px; right: auto;
+    bottom: 6px; top: auto;
+} 
+
+
+/* Footer */
+footer { font-size: .8em; margin: 40px; color: #999;}
+footer .content { display: inline; }
+footer a { margin-left: 30px; color: #777; }
+footer a:visited { color: #777; }
+footer a:hover { color: #000; }
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1000px) {
+
+    h1 { font-size: 1.6em; }
+
+    /* Header */
+    header div.intro { left: 65%; }
+    header div.intro h1 { margin-bottom: 12px; }
+
+    /* Section */
+
+
+
+}
+
+
+@media screen and (max-width: 825px) {
+
+    .shade {
+        display: none;
+    }
+    h1 { font-size: 1.2em; }
+
+    header { height: 300px; background-image: url(../images/banner_825.jpg)}
+    header div.intro { top: 120px; left: 48%; }
+
+    section.main {  display: block; width: 90%; height: auto; margin: 0 auto; padding: 0; }
+    section.main aside { width: 100%; float: left; }
+
+
+    .triviaContainer {
+
+        background-color: rgba(0,0,0, 0.5);
+        height: 850px;
+        min-height: 700px;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .triviaContainer #categories-form {
+
+        background-color: #555;
+        padding: 20px;
+    }
+
+    .triviaContainer #categories-form label {
+
+
+        height: 20px;
+        font-family: 'Teko', sans-serif;
+        font-size: 1.4em;
+        color: #fff;
+
+    }
+
+    .triviaContainer #categories-form select {
+        clear: both;
+        display: block;
+        height: 20px;
+        border: none;
+        outline: none;
+        background-color: #4b0a0c;
+        font-family: 'Teko', sans-serif;
+        font-size: 1.0em;
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 5px;
+    }
+
+    #gameTitle {
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    #gameTitle::after { content: ''; display: block; clear: both; }
+
+    h2.gameTitle {
+        color: rgba(0,0,0, 0.5);
+        font-size: 1.8em;
+        line-height: 1.5;
+    }
+
+
+    #mainGame {
+        display: none;
+        width: 100%;
+        height: 700px;
+        margin: 0px auto;
+    }
+
+    #mainGame #headerStyle {
+        font-size: 0.8em;
+        padding: 2px 5px;
+        margin: 0px 10px;
+    }
+
+    #mainGame #triviaSection #questionBox {
+        display: block;
+        width: 100%;
+        height: 400px; 
+        padding: 10px;
+        background-color: #f5f2d0;
+    }
+
+    #mainGame #triviaSection #questionBox h2 {
+        font-size: 1.2em;
+    }
+
+    #mainGame #triviaSection #buttonContainer .answerButton {
+        display: block;
+        width: 100%;
+        height: 40px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-top: 2px solid #7f7f7f;
+        background-color: rgba(85,85,85, 0.9);
+        font-family: 'Teko', sans-serif;
+        font-size: 1.0em;
+        color: #f5f2d0;;
+        text-align: left;
+        padding-left: 10px;
+        margin: 0;
+    }
+
+    #mainGame #nextStyle #next {
+        position: absolute;
+        top: 3px;
+        right: 10px;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        max-width: 150px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #555;
+        font-family: 'Teko', sans-serif;
+        font-size: 1.4em;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.2em; }
+    h3 { font-size: 1.0em; }
+
+    a.btn { font-size: 1em; }
+
+    /* Header */
+
+    header a.logo { width: 60px; height: 60px; }
+    header div.intro { top: 180px; left: 60%; }
+
+    section.main { margin-top: 10px; margin-bottom: 10px; }
+    section.main #gallery .cms .myLightBox .blogBox { width: 90%; }
+
+    /* Navigation */
+    nav { padding-top: 80px; }
+    nav > ul { padding-left: 10px; }
+
+}
+
+@media screen and (max-width: 625px) {
+    h1 { font-size: 1em; }
+    h3 { margin-bottom: 0px; }
+    a.btn { font-size: .9em; }
+
+    header { height: 160px; background-image: url(../images/banner_625.jpg); background-position: left top; }
+    header a.logo {
+        width: 100%; height: 60px;
+        left: 0px; top: 0px;
+        background-color: rgba(0,0,0,.65);
+        background-size: 46px 46px;
+        background-position: 20px center;
+    }
+
+    header div.intro { width: 300px; top: 85px; left: 40px; }
+    header div.intro h1 { margin-bottom: 10px; } 
+
+    /* Section - Main */
+    section.main aside { width: 100%; float: none; text-align: left; }
+
+    /* Navigation */
+    nav { position: static; width: auto; padding: 20px 15px; background-color: #4b0a0c;  }
+    nav ul, 
+    nav ul ul,
+    nav ul ul ul { display: block; position: static; }
+
+    nav > ul { padding: 0; }
+    nav > ul > li { float: none; margin-top: 25px; }
+
+    nav ul li:hover { background: none; }
+
+    nav ul li a {
+        width: auto;
+        display: block;
+        margin: 8px 10px;
+        padding: 8px 15px;
+        border: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    nav ul li a:hover { background-color: rgba(255,255,255,.24); }
+
+    nav ul ul { background: none;}
+
+    nav ul ul li a { margin-left: 30px; }
+    nav ul ul ul li a { margin-left: 60px; }
+
+    nav a[aria-haspopup="true"]::after { display: none; }
+
+    /* footer */
+
+    footer div.content { display: block; margin-top: 15px; }
+
+    footer div.content a { margin: 0 20px 0 0; }
+
+}
